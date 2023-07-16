@@ -1,0 +1,12 @@
+{% comment %}
+  The code below dynamically generates a sidebar nav of pages with
+  `sidebar_link: true` in the front-matter. See readme for usage.
+{% endcomment %}
+{% assign side_links = site.pages | where_exp:"item","item.sidebar_order > 0" | concat: site.side_links | sort: 'sidebar_order' %}
+{% for node in side_links %}
+  {% if node.title != null %}
+  {% comment %} class external-link if page.path is empth {% endcomment %}
+      <a class="page-link {% if page.url == node.url %} active{% endif %}"
+          href="{{ node.url }}">{{ node.title }}</a>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,53 @@
+input#hamburger-button {
+    display: none;
+}
+
+@media (max-width: $large-breakpoint - 1) {
+    div.hamburger-icon {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.25;
+        color: white;
+
+        span {
+            transition: opacity .5s ease-out;
+        }
+        span.open {
+            display: inline-block;
+            width: 0;
+            opacity: 1;
+        }
+        span.close {
+            display: inline-block;
+            margin-left: .07em;
+            opacity: 0;
+        }
+        span.open:before {
+            content: "☰";
+        }
+        span.close:before {
+            content: "✕";
+        }
+    }
+
+    #hamburger-button:checked ~ header span.open {
+        opacity: 0;
+    }
+    #hamburger-button:checked ~ header span.close {
+        opacity: 1;
+    }
+
+    #hamburger-button:checked ~ #sidebar-nav-links {
+        max-height: 500px;
+    }
+
+    #sidebar-nav-links {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .5s ease-out;
+
+        ul {
+            margin-bottom: 0;
+        }
+    }
+}

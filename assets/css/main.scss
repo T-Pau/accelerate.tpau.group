@@ -1,0 +1,36 @@
+---
+# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
+# only main files contain this front matter, not partials.
+---
+
+$sidebar-bg-color: #143DDF;
+$heading-color: #0A1C91;
+$body-muted: $heading-color;
+$body-color: #071074;
+$link-color: $body-muted;
+$code-color: #AF0600;
+$sidebar-color: #4ABAFA;
+$sidebar-link-color: $sidebar-color;
+$sidebar-link-hover-color: #77cbfb;
+$code-bg: #4ABAFA;
+$root-font-family: SourceSerif;
+$sans-font-family: SourceSans;
+$mono-font-family: SourceCodePro;
+$code-font-family: $mono-font-family;
+$site-title-font-family: SourceDisplay;
+$root-font-size: 1.1em;
+$large-font-size: 1.1rem;
+$max-content-width: 50rem;
+
+@import "source";
+@import "hydeout";
+
+
+p.copyright {
+        font-size: small;
+}
+
+code, tt, pre {
+        font-family: $mono-font-family;
+}
+

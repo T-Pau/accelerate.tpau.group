@@ -1,0 +1,66 @@
+
+body {
+    background: $body-bg;
+    color: $body-color;
+}
+
+/*
+.content {
+  background: $body-bg;
+  color: $body-color;
+  padding: $section-spacing;
+}
+*/
+
+main.container {
+    margin: .75rem;
+}
+@media (min-width: $large-breakpoint) {
+    main.container {
+        margin: 1.5rem;
+    }
+}
+@media (min-width: $wide-breakpoint) {
+    main.container {
+        margin: 4rem;
+    }
+}
+
+/* -----------------------------------------------------------
+  Sidebar links + nav
+----------------------------------------------------------- */
+
+
+/*
+#sidebar nav {
+  display: flex;
+}
+
+#sidebar-nav-links {
+  flex-flow: column nowrap;
+}
+
+#sidebar-icon-links {
+  max-width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 1rem;
+
+  @media (min-width: $large-breakpoint) {
+    margin-left: -0.25em;
+    justify-content: flex-start;
+  }
+}
+
+#sidebar nav > * {
+  display: block;
+  line-height: 1.75;
+}
+
+#sidebar nav > .icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  margin: 0 0.25em;
+}
+*/
+
