@@ -18,7 +18,7 @@ While developing programs for multiple 8-bit computers, existing cross assembler
 - They usually only target one CPU family, and all have slightly different syntax.
 - They don’t allow precise control where objects are placed in memory when necessary, while efficiently using the remaining memory automatically.
 - Adding a new CPU variant requires understanding the inner workings of the assembler, changing and recompiling the assembler, and either getting the change accepted upstream or maintaining a fork.
-- Not all support automatic dependency tracking.
+- Not all assemblers support automatic dependency tracking of included files and used libraries, which makes integrating them into a build system much harder.
 
 To address these issues, Accelerate was created.
 
