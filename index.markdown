@@ -8,6 +8,10 @@ Accelerate is a flexible cross-assembler running on modern systems targeting mul
 
 Programs are divided into small objects like a single subroutine or variables. These objects are automatically arranged in memory according to provided constraints like alingment or placement within a certain memory region. This allows to fulfil the hardware requirements of the target machine while automatically using the remaining memory optimally.
 
+## Warning
+
+**This program is still in the early stages of development. It contains bugs and features that aren't completely implemented yet. Also, details may still change.**
+
 ## Rationale
 
 While developing programs for multiple 8-bit computers, existing cross assemblers did not fit my needs in some key regards: 
