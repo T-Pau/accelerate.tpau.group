@@ -145,6 +145,145 @@
 
 <h1 id="cpu-definition">CPU Definition</h1>
 
+<h1 id="expressions">Expressions</h1>
+
+<p>Expressions are used in various places in a program.</p>
+
+<h2 id="types">Types</h2>
+
+<h3 id="boolean">Boolean</h3>
+
+<p>A boolean is either <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>. Numbers and strings can be implicitly converted to boolean, with <code class="language-plaintext highlighter-rouge">0</code> and the empty string being <code class="language-plaintext highlighter-rouge">false</code> and all others being <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<h3 id="signed-integers">Signed Integers</h3>
+
+<p>A signed integer with a maximum precision of 64 bits, giving a value range of -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.</p>
+
+<h3 id="unsigned-integer">Unsigned Integer</h3>
+
+<p>An unsigned integer with a maximum precision of 64 bits, giving a value range of 0 to 18,446,744,073,709,551,615.</p>
+
+<h3 id="floating-point-number">Floating Point Number</h3>
+
+<p>A floating point number expressed as a <strong>double</strong>.</p>
+
+<h3 id="string">String</h3>
+
+<h2 id="operators">Operators</h2>
+
+<h3 id="unary-operators">Unary Operators</h3>
+
+<p>All unary operators are followed by their operand and have higher precedence than binary operators.</p>
+
+<h4 id="-logical-not"><code class="language-plaintext highlighter-rouge">!</code> (Logical Not)</h4>
+
+<p>Converts its operand to boolean and negates it. The result is always boolean.</p>
+
+<h4 id="-unary-plus"><code class="language-plaintext highlighter-rouge">+</code> (Unary Plus)</h4>
+
+<p>The operand must be a number, the result is the operand unchanged.</p>
+
+<h4 id="--unary-minus"><code class="language-plaintext highlighter-rouge">-</code> (Unary Minus)</h4>
+
+<p>The operand must be a number, the result is the negative operand.</p>
+
+<h4 id="-bank-byte"><code class="language-plaintext highlighter-rouge">^</code> (Bank Byte)</h4>
+
+<p>The operand must be an unsigned integer, the result is the third lowest byte of the operand.</p>
+
+<h4 id="-low-byte"><code class="language-plaintext highlighter-rouge">&lt;</code> (Low Byte)</h4>
+
+<p>The operand must be an unsigned integer, the result is the lowest byte of the operand.</p>
+
+<h4 id="-hight-byte"><code class="language-plaintext highlighter-rouge">&gt;</code> (Hight Byte)</h4>
+
+<p>The operand must be an unsigned integer, the result is the second lowest byte of the operand (high byte of a 16-bit value).</p>
+
+<h4 id="-bitwise-not"><code class="language-plaintext highlighter-rouge">~</code> (Bitwise Not)</h4>
+
+<p>The operand must be an unsigned integer, the result is the operand with each bit inverted.</p>
+
+<h3 id="binary-operators">Binary Operators</h3>
+
+<p>All binary operators are left associative. The following list shows their relative precedence from high to low; operands on one line have the same precedence:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;&lt;</code> (Shift Left), <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> (Shift Right)</li>
+  <li><code class="language-plaintext highlighter-rouge">*</code> (Multiply), <code class="language-plaintext highlighter-rouge">/</code> (Divide), <code class="language-plaintext highlighter-rouge">&amp;</code> (Bitwise And)</li>
+  <li><code class="language-plaintext highlighter-rouge">+</code> (Add), <code class="language-plaintext highlighter-rouge">-</code> (Subtract), <code class="language-plaintext highlighter-rouge">|</code> (Bitwise Or), <code class="language-plaintext highlighter-rouge">^</code> (Bitwise Exclusive Or)</li>
+  <li><code class="language-plaintext highlighter-rouge">=</code> (Equal), <code class="language-plaintext highlighter-rouge">!=</code> (Not Equal), <code class="language-plaintext highlighter-rouge">&lt;</code> (Less), <code class="language-plaintext highlighter-rouge">&lt;=</code> (Less Than), <code class="language-plaintext highlighter-rouge">&gt;</code> (Greater), <code class="language-plaintext highlighter-rouge">&gt;=</code> (Greater Than)</li>
+  <li><code class="language-plaintext highlighter-rouge">&amp;&amp;</code> (Logical And)</li>
+  <li><code class="language-plaintext highlighter-rouge">||</code> (Logical Or)</li>
+</ul>
+
+<h4 id="-shift-left"><code class="language-plaintext highlighter-rouge">&lt;&lt;</code> (Shift Left)</h4>
+
+<p>Both operands must be integers. The left operand is shifted to the left by the number of bits of the value of the right operand. The result has the same type as the left operand.</p>
+
+<h4 id="-shift-right"><code class="language-plaintext highlighter-rouge">&gt;&gt;</code> (Shift Right)</h4>
+
+<p>Both operands must be integers. The left operand is shifted to the left by the number of bits of the value of the right operand. The result has the same type as the left operand.</p>
+
+<h4 id="-multiply"><code class="language-plaintext highlighter-rouge">*</code> (Multiply)</h4>
+
+<p>Both operands must be numbers. The result is the product of the two operands. If both operands are integers, the result is an integer, otherwise a float point number.</p>
+
+<h4 id="-divide"><code class="language-plaintext highlighter-rouge">/</code> (Divide)</h4>
+
+<p>Both operands must be numbers. If both operands are integers, the result is the quotient of the two operands, otherwise a floating point division is performed.</p>
+
+<h4 id="-bitwise-and"><code class="language-plaintext highlighter-rouge">&amp;</code> (Bitwise And)</h4>
+
+<p>Both operands must be unsigned integers. The result is the bitwise and of the two operands.</p>
+
+<h4 id="-add"><code class="language-plaintext highlighter-rouge">+</code> (Add)</h4>
+
+<p>Both operands must be numbers. The result is the sum of the two operands. If both operands are integers, the result is an integer, otherwise a float point number.</p>
+
+<h4 id="--subtract"><code class="language-plaintext highlighter-rouge">-</code> (Subtract)</h4>
+
+<p>Both operands must be numbers. The result is the difference of the two operands. If both operands are integers, the result is an integer, otherwise a float point number.</p>
+
+<h4 id="-bitwise-or"><code class="language-plaintext highlighter-rouge">|</code> (Bitwise Or)</h4>
+
+<p>Both operands must be unsigned integers. The result is the bitwise or of the two operands.</p>
+
+<h4 id="-bitwise-exclusive-or"><code class="language-plaintext highlighter-rouge">^</code> (Bitwise Exclusive Or)</h4>
+
+<p>Both operands must be unsigned integers. The result is the bitwise exclusive or of the two operands.</p>
+
+<h4 id="-equal"><code class="language-plaintext highlighter-rouge">!</code> (Equal)</h4>
+
+<p>Both operands must be either booleans, numbers, or strings. The result is <code class="language-plaintext highlighter-rouge">true</code> if both operands are the same, <code class="language-plaintext highlighter-rouge">false</code> otherwise.</p>
+
+<h4 id="-not-equal"><code class="language-plaintext highlighter-rouge">!=</code> (Not Equal)</h4>
+
+<p>Both operands must be either booleans, numbers, or strings. The result is <code class="language-plaintext highlighter-rouge">false</code> if both operands are the same, <code class="language-plaintext highlighter-rouge">true</code> otherwise.</p>
+
+<h4 id="-less"><code class="language-plaintext highlighter-rouge">&lt;</code> (Less)</h4>
+
+<p>Both operands must be either numbers or strings. The result is <code class="language-plaintext highlighter-rouge">false</code> if the left operand is less than the right, <code class="language-plaintext highlighter-rouge">true</code> otherwise.</p>
+
+<h4 id="-less-equal"><code class="language-plaintext highlighter-rouge">&lt;=</code> (Less Equal)</h4>
+
+<p>Both operands must be either numbers or strings. The result is <code class="language-plaintext highlighter-rouge">false</code> if the left operand is grelessater than or equal to the right, <code class="language-plaintext highlighter-rouge">true</code> otherwise.</p>
+
+<h4 id="-greater"><code class="language-plaintext highlighter-rouge">&gt;</code> (Greater)</h4>
+
+<p>Both operands must be either numbers or strings. The result is <code class="language-plaintext highlighter-rouge">false</code> if the left operand is greater than the right, <code class="language-plaintext highlighter-rouge">true</code> otherwise.</p>
+
+<h4 id="-greater-equal"><code class="language-plaintext highlighter-rouge">&gt;=</code> (Greater Equal)</h4>
+
+<p>Both operands must be either numbers or strings. The result is <code class="language-plaintext highlighter-rouge">false</code> if the left operand is greater than or equal to the right, <code class="language-plaintext highlighter-rouge">true</code> otherwise.</p>
+
+<h4 id="-logical-and"><code class="language-plaintext highlighter-rouge">&amp;&amp;</code> (Logical And)</h4>
+
+<p>Both operands are converted to boolean. The result is <code class="language-plaintext highlighter-rouge">true</code> if both operands are true, <code class="language-plaintext highlighter-rouge">false</code> otherwise.</p>
+
+<h4 id="-logical-or"><code class="language-plaintext highlighter-rouge">||</code> (Logical Or)</h4>
+
+<p>Both operands are converted to boolean. The result is <code class="language-plaintext highlighter-rouge">true</code> if at least one operand is true, <code class="language-plaintext highlighter-rouge">false</code> otherwise.</p>
+
 
 </main><!-- Optional footer content -->
 </body>

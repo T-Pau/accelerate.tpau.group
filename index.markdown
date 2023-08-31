@@ -35,7 +35,12 @@ This also allows libraries to be more efficient, since only the objects actually
 
 These are the design goals of Accelerate, in order of importance:
 
-### 1. Allow extending its functionality easily.
+### 1. Be correct and consistent.
+
+Correct programs should be translated correctely, while errors in programs should be detected and reported, not silently lead to incorrect or undefined behaviour.
+
+
+### 2. Allow extending its functionality easily.
 
 Accelerate is a generic assembler without built-in knowledge about any CPU architecture, memory layout, or output file format. All these aspects are defined in easily readable configuration files.
 
@@ -43,14 +48,27 @@ A definition file can extend another, thus allowing to adapt existing platform s
 
 This allows adding support for new target computers without modifying Accelerate itself. 
 
-### 2. Allow precise control over the produced binary when needed, without requiring it when not.
+
+### 3. Allow precise control over the produced binary when needed, without requiring it when not.
 
 You can specify the exact address where to place an object, or you can specify a memory region and alignment (i. e. the address must be divisible by a certain number). Accelerate will make sure the requirements are met, while placing the other elements as efficiently as possible.
 
-### 3. Meet modern expectation of a programming tool.
+
+### 4. Meet modern expectation of a programming tool.
 
 Accelerate is written in C++20 and should work on all modern platforms. It is a command line tool that follows the usual Unix conventions.
 
 Accelerate integrates well with development and build environments: If it encounters an error, it will not produce output files and exit with a non-zero status. Also, it supports gcc-style dependency tracking.
 
 Accelerate supports reproducible builds: if given the same input files, it will create byte-wise identical results. This means that if a program is built from the same source on two different computers, the resulting program will be identical.
+
+### 5. Be easy to use.
+
+The language implemented by Accelerate tries to be easy to use: consistent, easy to remember, and readable.
+
+
+## Reporting Problems.
+
+It's an old addage that it's never the compiler's fault, but since Accelerate is still young, so bugs and misfeatures are likely. If you found a problem, please [create an issue on GitHub](https://github.com/T-Pau/Accelerate/issues/new/choose) or let us know at [accelerate@tpau.group](accelerate@tpau.group).
+
+Also let us know if the [documentation](documentation) is incomplete, inaccurate, or hard to understand.

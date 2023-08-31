@@ -96,7 +96,11 @@
 
 <p>These are the design goals of Accelerate, in order of importance:</p>
 
-<h3 id="1-allow-extending-its-functionality-easily">1. Allow extending its functionality easily.</h3>
+<h3 id="1-be-correct-and-consistent">1. Be correct and consistent.</h3>
+
+<p>Correct programs should be translated correctely, while errors in programs should be detected and reported, not silently lead to incorrect or undefined behaviour.</p>
+
+<h3 id="2-allow-extending-its-functionality-easily">2. Allow extending its functionality easily.</h3>
 
 <p>Accelerate is a generic assembler without built-in knowledge about any CPU architecture, memory layout, or output file format. All these aspects are defined in easily readable configuration files.</p>
 
@@ -104,17 +108,27 @@
 
 <p>This allows adding support for new target computers without modifying Accelerate itself.</p>
 
-<h3 id="2-allow-precise-control-over-the-produced-binary-when-needed-without-requiring-it-when-not">2. Allow precise control over the produced binary when needed, without requiring it when not.</h3>
+<h3 id="3-allow-precise-control-over-the-produced-binary-when-needed-without-requiring-it-when-not">3. Allow precise control over the produced binary when needed, without requiring it when not.</h3>
 
 <p>You can specify the exact address where to place an object, or you can specify a memory region and alignment (i. e. the address must be divisible by a certain number). Accelerate will make sure the requirements are met, while placing the other elements as efficiently as possible.</p>
 
-<h3 id="3-meet-modern-expectation-of-a-programming-tool">3. Meet modern expectation of a programming tool.</h3>
+<h3 id="4-meet-modern-expectation-of-a-programming-tool">4. Meet modern expectation of a programming tool.</h3>
 
 <p>Accelerate is written in C++20 and should work on all modern platforms. It is a command line tool that follows the usual Unix conventions.</p>
 
 <p>Accelerate integrates well with development and build environments: If it encounters an error, it will not produce output files and exit with a non-zero status. Also, it supports gcc-style dependency tracking.</p>
 
 <p>Accelerate supports reproducible builds: if given the same input files, it will create byte-wise identical results. This means that if a program is built from the same source on two different computers, the resulting program will be identical.</p>
+
+<h3 id="5-be-easy-to-use">5. Be easy to use.</h3>
+
+<p>The language implemented by Accelerate tries to be easy to use: consistent, easy to remember, and readable.</p>
+
+<h2 id="reporting-problems">Reporting Problems.</h2>
+
+<p>It’s an old addage that it’s never the compiler’s fault, but since Accelerate is still young, so bugs and misfeatures are likely. If you found a problem, please <a href="https://github.com/T-Pau/Accelerate/issues/new/choose">create an issue on GitHub</a> or let us know at <a href="accelerate@tpau.group">accelerate@tpau.group</a>.</p>
+
+<p>Also let us know if the <a href="documentation">documentation</a> is incomplete, inaccurate, or hard to understand.</p>
 </div>
 
 </main><!-- Optional footer content -->
