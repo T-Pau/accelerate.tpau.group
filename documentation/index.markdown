@@ -13,7 +13,7 @@ The program is organized into **source files** and **libraries**, which contain 
 
 # Assembler Soruce File
 
-A source file contains definitions that will be translated to an **object file**, a **library** or a **binary program**.
+A source file contains definitions that will be translated to a **library** or a **binary program**.
 
 It consists of a list of elements and directives, separated by newlines. Instructions, labels, and assignments within an **object** or **macro** are also separated by newlines.
 
