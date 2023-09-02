@@ -112,11 +112,17 @@ A signed integer with a maximum precision of 64 bits, giving a value range of -9
 
 An unsigned integer with a maximum precision of 64 bits, giving a value range of 0 to 18,446,744,073,709,551,615.
 
+For hexadecimal numbers, prefix them with `$`, for binary numbers with `%`.
+
 ### Floating Point Number
 
 A floating point number expressed as a **double**.
 
+Scientific notation (including an exponent) is not supported yet.
+
 ### String
+
+Strings are enclosed in `"` and support Unicode characters.
 
 ## Operators
 

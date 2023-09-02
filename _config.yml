@@ -42,6 +42,9 @@ plugins:
   - jekyll-feed
 #  - jekyll-paginate
 
+kramdown:
+  syntax_highlighter: rouge
+
 paginate: 15
 paginate_path: /news/page:num
 excerpt_separator: <!-- detail page only -->
