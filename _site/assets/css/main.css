@@ -1129,6 +1129,10 @@ input#hamburger-button {
     margin-bottom: 0;
   }
 }
+img.logo {
+  width: 240px;
+}
+
 p.copyright {
   font-size: small;
 }
