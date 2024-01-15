@@ -205,7 +205,7 @@ Both operands must be unsigned integers. The result is the bitwise or of the two
 
 Both operands must be unsigned integers. The result is the bitwise exclusive or of the two operands.
 
-#### `!` (Equal)
+#### `==` (Equal)
 
 Both operands must be either booleans, numbers, or strings. The result is `true` if both operands are the same, `false` otherwise.
 
