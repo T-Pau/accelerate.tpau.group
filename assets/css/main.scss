@@ -25,6 +25,9 @@ $max-content-width: 50rem;
 @import "source";
 @import "hydeout";
 
+img.logo {
+    width: 240px;
+}
 
 p.copyright {
         font-size: small;
