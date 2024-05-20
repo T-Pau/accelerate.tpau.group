@@ -100,9 +100,13 @@ Expressions are used in various places in a program.
 
 ## Types
 
+### Void
+
+This type represents the absence of a value and is written as `.none`. It is useful as default value for function or macro arguments. 
+
 ### Boolean
 
-A boolean is either `true` or `false`. Numbers and strings can be implicitly converted to boolean, with `0` and the empty string being `false` and all others being `true`.
+A boolean is either `.true` or `.false`. Numbers and strings can be implicitly converted to boolean, with `0` and the empty string being `.false` and all others being `.true`.
 
 ### Signed Integers
 
@@ -165,7 +169,7 @@ All binary operators are left associative. The following list shows their relati
 - `<<` (Shift Left), `>>` (Shift Right)
 - `*` (Multiply), `/` (Divide), `&` (Bitwise And)
 - `+` (Add), `-` (Subtract), `|` (Bitwise Or), `^` (Bitwise Exclusive Or)
-- `=` (Equal), `!=` (Not Equal), `<` (Less), `<=` (Less Than), `>` (Greater), `>=` (Greater Than)
+- `==` (Equal), `!=` (Not Equal), `<` (Less), `<=` (Less Than), `>` (Greater), `>=` (Greater Than)
 - `&&` (Logical And)
 - `||` (Logical Or)
 
