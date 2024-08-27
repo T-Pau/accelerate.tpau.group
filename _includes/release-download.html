@@ -1,6 +1,0 @@
-{% if page.release_version and page.release_extensions %}
-Download release:
-{% for extension in page.release_extensions %}
-* [libzip-{{page.release_version}}.tar.{{extension}}]({{site.url}}/download/libzip-{{page.release_version}}.tar.{{extension}})
-{% endfor %}
-{% endif %}

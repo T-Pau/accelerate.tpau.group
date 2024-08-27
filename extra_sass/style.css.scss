@@ -1,0 +1,44 @@
+@import "source";
+
+:root {
+    --tpau-c64-blue: #0A1C91;
+    --tpau-c64-light-blue: #5C52E6;
+    --md-text-font: "SourceSerif"; 
+    --md-code-font: "SourceCode";
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
+    font-family: SourceSans;
+    font-weight: bold;
+}
+
+.md-header__sub_topic {
+    font-weight: normal;
+}
+
+:root > * {
+    --md-accent-fg-color: var(--tpau-c64-light-blue);
+    --md-primary-fg-color: var(--tpau-c64-blue);
+    --md-default-fg-color--light: var(--tpau-c64-blue);
+    --md-typeset-color: var(--tpau-c64-blue);
+    --md-footer-bg-color: var(--tpau-c64-blue);
+    --md-footer-fg-color--light: white;
+}
+
+.md-content {
+    --md-typeset-a-color: var(--tpau-c64-light-blue);
+}
+
+.md-nav__button.md-logo {
+    display: inline;
+}
+
+.md-nav__title .md-nav__button.md-logo img {
+    width: 100%;
+    height: 120px;
+}
+
+.md-nav__title .md-nav__button.md-logo img svg {
+    width: 100%;
+    height: 100%;
+}
