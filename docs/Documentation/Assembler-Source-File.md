@@ -6,6 +6,18 @@ It consists of a list of elements and directives, separated by newlines. Instruc
 
 ## Directives
 
+### `.cpu`
+
+```
+.cpu <name>
+```
+
+### `.pin`
+
+```
+.pin <name> <address>
+```
+
 ### `.section`
 
 ```
@@ -14,12 +26,6 @@ It consists of a list of elements and directives, separated by newlines. Instruc
 
 The `.section` directive specifies which section the following objects will be placed in. This determines where in memory they will be placed, and whether they will be included in the **binary program** (**data objects**) or not (**reservation objects**).
 
-### `.scope`
-
-```
-.scope [public|private]
-```
-The `.scope` directive specifies the visibility of the following elements. `private` elements are only visible within the same module (library or the main program). `public` elements are also visible to modules using a library.
 
 ### `.target`
 
@@ -27,7 +33,26 @@ The `.scope` directive specifies the visibility of the following elements. `priv
 .target "<target-name>"
 ```
 
-The `.target` directive specifies which **target definition** file will be used in translating the file.
+The `.target` directive specifies which [**target definition**](Target-Definition.md) file will be used in translating the file.
+
+
+### `.use`
+
+```
+.use <name>
+```
+
+### `.visibility`
+
+```
+.visibility [public|private]
+```
+The `.visibility` directive specifies the visibility of the following elements.
+
+`private` elements are only visible within the same module (library, main program, or target).
+
+`public` elements are also visible to modules using a library. Elements from the program used by the target must also be `public`.
+
 
 ## Elements
 
@@ -38,7 +63,7 @@ There are two kinds of objects:
 **Data objects** contain code or other data and are saved in the resulting program binary:
 
 ```
-[.private|.public] <name> [.align <alignment>] [.address <address>] {
+[.default] [.private|.public] <name> [.align <alignment>] [.address <address>] [.used] [.uses <name>] {
     <body>
 }
 ```
@@ -46,8 +71,12 @@ There are two kinds of objects:
 **Reservation objects** only reserve a certain amount of memory, which will not be initialized and is usually not saved in the resulting program binary:
 
 ```
-[.private|.public] <name> [.align <alignment>] [.address <address>] .reserve <length>
+[.default] [.private|.public] <name> [.align <alignment>] [.address <address>] [.used] [.uses <name>] .reserve <length>
 ```
+
+If `.default` is specified, this definition is only used if no regular definition is found. This can be used by a target to define a default implementation.
+
+`.private` or `.public` override the visibility specified by [`.visibilty`](#visibility).
 
 ### Constants
 

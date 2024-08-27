@@ -14,7 +14,7 @@
 <link href="../../assets/stylesheets/main.3cba04c6.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../assets/stylesheets/extra-style.zn4oafl1.min.css" rel="stylesheet"/></head>
+<link href="../../assets/stylesheets/extra-style.cjue6n5r.min.css" rel="stylesheet"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -173,6 +173,20 @@
 <nav aria-label="Directives" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#cpu">
+<span class="md-ellipsis">
+      .cpu
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pin">
+<span class="md-ellipsis">
+      .pin
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#section">
 <span class="md-ellipsis">
       .section
@@ -180,16 +194,23 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#scope">
+<a class="md-nav__link" href="#target">
 <span class="md-ellipsis">
-      .scope
+      .target
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#target">
+<a class="md-nav__link" href="#use">
 <span class="md-ellipsis">
-      .target
+      .use
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visibility">
+<span class="md-ellipsis">
+      .visibility
     </span>
 </a>
 </li>
@@ -315,29 +336,42 @@
 <p>A source file contains definitions that will be translated to a <strong>library</strong> or a <strong>binary program</strong>.</p>
 <p>It consists of a list of elements and directives, separated by newlines. Instructions, labels, and assignments within an <strong>object</strong> or <strong>macro</strong> are also separated by newlines.</p>
 <h2 id="directives">Directives</h2>
+<h3 id="cpu"><code>.cpu</code></h3>
+<pre><code>.cpu &lt;name&gt;
+</code></pre>
+<h3 id="pin"><code>.pin</code></h3>
+<pre><code>.pin &lt;name&gt; &lt;address&gt;
+</code></pre>
 <h3 id="section"><code>.section</code></h3>
 <pre><code>.section &lt;section-name&gt;
 </code></pre>
 <p>The <code>.section</code> directive specifies which section the following objects will be placed in. This determines where in memory they will be placed, and whether they will be included in the <strong>binary program</strong> (<strong>data objects</strong>) or not (<strong>reservation objects</strong>).</p>
-<h3 id="scope"><code>.scope</code></h3>
-<pre><code>.scope [public|private]
-</code></pre>
-<p>The <code>.scope</code> directive specifies the visibility of the following elements. <code>private</code> elements are only visible within the same module (library or the main program). <code>public</code> elements are also visible to modules using a library.</p>
 <h3 id="target"><code>.target</code></h3>
 <pre><code>.target "&lt;target-name&gt;"
 </code></pre>
-<p>The <code>.target</code> directive specifies which <strong>target definition</strong> file will be used in translating the file.</p>
+<p>The <code>.target</code> directive specifies which <a href="../Target-Definition/"><strong>target definition</strong></a> file will be used in translating the file.</p>
+<h3 id="use"><code>.use</code></h3>
+<pre><code>.use &lt;name&gt;
+</code></pre>
+<h3 id="visibility"><code>.visibility</code></h3>
+<pre><code>.visibility [public|private]
+</code></pre>
+<p>The <code>.visibility</code> directive specifies the visibility of the following elements.</p>
+<p><code>private</code> elements are only visible within the same module (library, main program, or target).</p>
+<p><code>public</code> elements are also visible to modules using a library. Elements from the program used by the target must also be <code>public</code>.</p>
 <h2 id="elements">Elements</h2>
 <h3 id="objects">Objects</h3>
 <p>There are two kinds of objects:</p>
 <p><strong>Data objects</strong> contain code or other data and are saved in the resulting program binary:</p>
-<pre><code>[.private|.public] &lt;name&gt; [.align &lt;alignment&gt;] [.address &lt;address&gt;] {
+<pre><code>[.default] [.private|.public] &lt;name&gt; [.align &lt;alignment&gt;] [.address &lt;address&gt;] [.used] [.uses &lt;name&gt;] {
     &lt;body&gt;
 }
 </code></pre>
 <p><strong>Reservation objects</strong> only reserve a certain amount of memory, which will not be initialized and is usually not saved in the resulting program binary:</p>
-<pre><code>[.private|.public] &lt;name&gt; [.align &lt;alignment&gt;] [.address &lt;address&gt;] .reserve &lt;length&gt;
+<pre><code>[.default] [.private|.public] &lt;name&gt; [.align &lt;alignment&gt;] [.address &lt;address&gt;] [.used] [.uses &lt;name&gt;] .reserve &lt;length&gt;
 </code></pre>
+<p>If <code>.default</code> is specified, this definition is only used if no regular definition is found. This can be used by a target to define a default implementation.</p>
+<p><code>.private</code> or <code>.public</code> override the visibility specified by <a href="#visibility"><code>.visibilty</code></a>.</p>
 <h3 id="constants">Constants</h3>
 <p>Constants define values that can be used in other parts of the program. They can refer to other constants or objects (which results in their address).</p>
 <pre><code>[.private|.public] &lt;name&gt; = &lt;value&gt;
