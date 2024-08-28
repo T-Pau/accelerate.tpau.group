@@ -8,45 +8,52 @@ It consists of a list of elements and directives, separated by newlines. Instruc
 
 ### `.cpu`
 
-```
-.cpu <name>
-```
+<pre>
+  <code>.cpu <em>name</em></code>
+</pre>
+
+This overrides the CPU specified in the target for this file.
 
 ### `.pin`
 
-```
-.pin <name> <address>
-```
+<pre>
+  <code>.pin <em>name</em> <em>address</em></code>
+</pre>
+
+Sets the address of object *name* to *address* and marks it as used.
 
 ### `.section`
 
-```
-.section <section-name>
-```
+<pre>
+  <code>.section <em>section-name</em></code>
+</pre>
 
 The `.section` directive specifies which section the following objects will be placed in. This determines where in memory they will be placed, and whether they will be included in the **binary program** (**data objects**) or not (**reservation objects**).
 
 
 ### `.target`
 
-```
-.target "<target-name>"
-```
+<pre>
+  <code>.target "<em>target-name</em>"</code>
+</pre>
 
 The `.target` directive specifies which [**target definition**](Target-Definition.md) file will be used in translating the file.
 
 
 ### `.use`
 
-```
-.use <name>
-```
+<pre>
+  <code>.use <em>name</em></code>
+</pre>
+
+Marks the object *name* as used.
 
 ### `.visibility`
 
 ```
 .visibility [public|private]
 ```
+
 The `.visibility` directive specifies the visibility of the following elements.
 
 `private` elements are only visible within the same module (library, main program, or target).
@@ -56,46 +63,93 @@ The `.visibility` directive specifies the visibility of the following elements.
 
 ## Elements
 
+### Element Modifiers
+
+Elements can be preceded by one or more modifiers:
+
+#### `.default`
+
+This definition is only used if no regular definition with the same name is found. It can be used by a target to define a default implementation.
+
+#### `.private`
+
+Makes the element private.
+
+#### `.public`
+
+Makes the element public.
+
+
 ### Objects
 
-There are two kinds of objects:
+#### Object Modifiers
 
-**Data objects** contain code or other data and are saved in the resulting program binary:
+##### `.align`
 
-```
-[.default] [.private|.public] <name> [.align <alignment>] [.address <address>] [.used] [.uses <name>] {
-    <body>
-}
-```
+<pre>
+<code>.align <em>alignment</em></code>
+</pre>
 
-**Reservation objects** only reserve a certain amount of memory, which will not be initialized and is usually not saved in the resulting program binary:
+The object's address will be a multiple of *alignment*.
 
-```
-[.default] [.private|.public] <name> [.align <alignment>] [.address <address>] [.used] [.uses <name>] .reserve <length>
-```
 
-If `.default` is specified, this definition is only used if no regular definition is found. This can be used by a target to define a default implementation.
+##### `.address`
 
-`.private` or `.public` override the visibility specified by [`.visibilty`](#visibility).
+<pre>
+  <code>.address <em>address</em></code>
+</pre>
+
+Specifies the address to place the object at.
+
+##### `.used`
+
+Marks the object as used.
+
+##### `.uses`
+
+<pre>
+  <code>.uses <em>name</em></code>
+</pre>
+
+If the object is used, object *name* is also used.
+
+#### Data Objects
+
+These contain code or other data and are saved in the resulting program binary:
+
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> [<a href="#object-modifiers"><em>object modifiers</em></a>] {
+    <em>body</em>
+}</code>
+</pre>
+
+#### Reservation Object
+
+These only reserve a certain amount of memory, which will not be initialized and is usually not saved in the resulting program binary:
+
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> [<a href="#object-modifiers"><em>object modifiers</em></a>] .reserve <em>length</em></code>
+</pre>
+
 
 ### Constants
 
 Constants define values that can be used in other parts of the program. They can refer to other constants or objects (which results in their address).
 
-```
-[.private|.public] <name> = <value>
-```
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> = <em>value</em></code>
+</pre>
 
 ### Macros
 
-```
-[.private|.public] .macro <name> [<argument>[=<default-value>], ...] {
-    <body>
-}
-```
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] .macro <em>name</em> [<em>argument</em>[=<em>default-value</em>], ...] {
+    <em>body</em>
+}</code>
+</pre>
 
 ### Functions
 
-```
-[.private|.public] <name> ([<argument>[=<default-value>, ...]) = <value>
-```
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> ([<em>argument</em>[=<em>default-value</em>], ...]) = <em>value</em></code>
+</pre>

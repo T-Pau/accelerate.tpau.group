@@ -14,7 +14,7 @@
 <link href="../../assets/stylesheets/main.3cba04c6.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../assets/stylesheets/extra-style.cjue6n5r.min.css" rel="stylesheet"/></head>
+<link href="../../assets/stylesheets/extra-style.irlg489e.min.css" rel="stylesheet"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -28,6 +28,9 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label=" " class="md-header__button md-logo" data-md-component="logo" href="../.." title="&amp;nbsp;">
+<img alt="icon" src="/assets/images/icon.svg"/>
+</a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
 </label>
@@ -226,11 +229,100 @@
 <nav aria-label="Elements" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#element-modifiers">
+<span class="md-ellipsis">
+      Element Modifiers
+    </span>
+</a>
+<nav aria-label="Element Modifiers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#default">
+<span class="md-ellipsis">
+      .default
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#private">
+<span class="md-ellipsis">
+      .private
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#public">
+<span class="md-ellipsis">
+      .public
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#objects">
 <span class="md-ellipsis">
       Objects
     </span>
 </a>
+<nav aria-label="Objects" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#object-modifiers">
+<span class="md-ellipsis">
+      Object Modifiers
+    </span>
+</a>
+<nav aria-label="Object Modifiers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#align">
+<span class="md-ellipsis">
+      .align
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#address">
+<span class="md-ellipsis">
+      .address
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#used">
+<span class="md-ellipsis">
+      .used
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uses">
+<span class="md-ellipsis">
+      .uses
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-objects">
+<span class="md-ellipsis">
+      Data Objects
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reservation-object">
+<span class="md-ellipsis">
+      Reservation Object
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#constants">
@@ -337,22 +429,30 @@
 <p>It consists of a list of elements and directives, separated by newlines. Instructions, labels, and assignments within an <strong>object</strong> or <strong>macro</strong> are also separated by newlines.</p>
 <h2 id="directives">Directives</h2>
 <h3 id="cpu"><code>.cpu</code></h3>
-<pre><code>.cpu &lt;name&gt;
-</code></pre>
+<pre>
+  <code>.cpu <em>name</em></code>
+</pre>
+<p>This overrides the CPU specified in the target for this file.</p>
 <h3 id="pin"><code>.pin</code></h3>
-<pre><code>.pin &lt;name&gt; &lt;address&gt;
-</code></pre>
+<pre>
+  <code>.pin <em>name</em> <em>address</em></code>
+</pre>
+<p>Sets the address of object <em>name</em> to <em>address</em> and marks it as used.</p>
 <h3 id="section"><code>.section</code></h3>
-<pre><code>.section &lt;section-name&gt;
-</code></pre>
+<pre>
+  <code>.section <em>section-name</em></code>
+</pre>
 <p>The <code>.section</code> directive specifies which section the following objects will be placed in. This determines where in memory they will be placed, and whether they will be included in the <strong>binary program</strong> (<strong>data objects</strong>) or not (<strong>reservation objects</strong>).</p>
 <h3 id="target"><code>.target</code></h3>
-<pre><code>.target "&lt;target-name&gt;"
-</code></pre>
+<pre>
+  <code>.target "<em>target-name</em>"</code>
+</pre>
 <p>The <code>.target</code> directive specifies which <a href="../Target-Definition/"><strong>target definition</strong></a> file will be used in translating the file.</p>
 <h3 id="use"><code>.use</code></h3>
-<pre><code>.use &lt;name&gt;
-</code></pre>
+<pre>
+  <code>.use <em>name</em></code>
+</pre>
+<p>Marks the object <em>name</em> as used.</p>
 <h3 id="visibility"><code>.visibility</code></h3>
 <pre><code>.visibility [public|private]
 </code></pre>
@@ -360,30 +460,60 @@
 <p><code>private</code> elements are only visible within the same module (library, main program, or target).</p>
 <p><code>public</code> elements are also visible to modules using a library. Elements from the program used by the target must also be <code>public</code>.</p>
 <h2 id="elements">Elements</h2>
+<h3 id="element-modifiers">Element Modifiers</h3>
+<p>Elements can be preceded by one or more modifiers:</p>
+<h4 id="default"><code>.default</code></h4>
+<p>This definition is only used if no regular definition with the same name is found. It can be used by a target to define a default implementation.</p>
+<h4 id="private"><code>.private</code></h4>
+<p>Makes the element private.</p>
+<h4 id="public"><code>.public</code></h4>
+<p>Makes the element public.</p>
 <h3 id="objects">Objects</h3>
-<p>There are two kinds of objects:</p>
-<p><strong>Data objects</strong> contain code or other data and are saved in the resulting program binary:</p>
-<pre><code>[.default] [.private|.public] &lt;name&gt; [.align &lt;alignment&gt;] [.address &lt;address&gt;] [.used] [.uses &lt;name&gt;] {
-    &lt;body&gt;
-}
-</code></pre>
-<p><strong>Reservation objects</strong> only reserve a certain amount of memory, which will not be initialized and is usually not saved in the resulting program binary:</p>
-<pre><code>[.default] [.private|.public] &lt;name&gt; [.align &lt;alignment&gt;] [.address &lt;address&gt;] [.used] [.uses &lt;name&gt;] .reserve &lt;length&gt;
-</code></pre>
-<p>If <code>.default</code> is specified, this definition is only used if no regular definition is found. This can be used by a target to define a default implementation.</p>
-<p><code>.private</code> or <code>.public</code> override the visibility specified by <a href="#visibility"><code>.visibilty</code></a>.</p>
+<h4 id="object-modifiers">Object Modifiers</h4>
+<h5 id="align"><code>.align</code></h5>
+<pre>
+<code>.align <em>alignment</em></code>
+</pre>
+<p>The object's address will be a multiple of <em>alignment</em>.</p>
+<h5 id="address"><code>.address</code></h5>
+<pre>
+  <code>.address <em>address</em></code>
+</pre>
+<p>Specifies the address to place the object at.</p>
+<h5 id="used"><code>.used</code></h5>
+<p>Marks the object as used.</p>
+<h5 id="uses"><code>.uses</code></h5>
+<pre>
+  <code>.uses <em>name</em></code>
+</pre>
+<p>If the object is used, object <em>name</em> is also used.</p>
+<h4 id="data-objects">Data Objects</h4>
+<p>These contain code or other data and are saved in the resulting program binary:</p>
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> [<a href="#object-modifiers"><em>object modifiers</em></a>] {
+    <em>body</em>
+}</code>
+</pre>
+<h4 id="reservation-object">Reservation Object</h4>
+<p>These only reserve a certain amount of memory, which will not be initialized and is usually not saved in the resulting program binary:</p>
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> [<a href="#object-modifiers"><em>object modifiers</em></a>] .reserve <em>length</em></code>
+</pre>
 <h3 id="constants">Constants</h3>
 <p>Constants define values that can be used in other parts of the program. They can refer to other constants or objects (which results in their address).</p>
-<pre><code>[.private|.public] &lt;name&gt; = &lt;value&gt;
-</code></pre>
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> = <em>value</em></code>
+</pre>
 <h3 id="macros">Macros</h3>
-<pre><code>[.private|.public] .macro &lt;name&gt; [&lt;argument&gt;[=&lt;default-value&gt;], ...] {
-    &lt;body&gt;
-}
-</code></pre>
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] .macro <em>name</em> [<em>argument</em>[=<em>default-value</em>], ...] {
+    <em>body</em>
+}</code>
+</pre>
 <h3 id="functions">Functions</h3>
-<pre><code>[.private|.public] &lt;name&gt; ([&lt;argument&gt;[=&lt;default-value&gt;, ...]) = &lt;value&gt;
-</code></pre>
+<pre>
+  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> ([<em>argument</em>[=<em>default-value</em>], ...]) = <em>value</em></code>
+</pre>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

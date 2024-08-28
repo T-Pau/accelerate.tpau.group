@@ -6,39 +6,39 @@ A **target definition** defines the memory layout and binary file format. It sup
 
 ### `.default_string_encoding`
 
-```
-.default_string_encoding <name>
-```
+<pre>
+  <code>.default_string_encoding <em>name</em></code>
+</pre>
 
 ### `.extension`
 
-```
-.extension <string>
-```
+<pre>
+  <code>.extension "<em>extension</em>"</code>
+</pre>
 
 ### `.output`
 
-```
-.output {
-    <body>
-}
-```
+<pre>
+  <code>.output {
+    <em>body</em>
+}</code>
+</pre>
 
 ### `.section`
 
-```
-.section {
+<pre>
+  <code>.section {
     
-}
-```
+}</code>
+</pre>
 
 ### `.segment`
 
-```
-.segment {
+<pre>
+  <code>.segment {
 
-}
-```
+}</code>
+</pre>
 
 ### `.string_encoding`
 

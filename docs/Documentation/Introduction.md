@@ -4,4 +4,4 @@ Accelerate is a cross-assembler that runs on modern computers. It translates ass
 
 All source, definition, and intermediary files are text files, although the latter are not meant to be edited by hand.
 
-The program is organized into **source files** and **libraries**, which contain **objects**, **constants**, **macros**, and **functions**. The assembly process is directed by a  **target definition**, which references a **CPU definition**. 
+The program is organized into [**source files**](Assembler-Source-File.md) and **libraries**, which contain [**objects**](Assembler-Source-File.md#objects), [**constants**](Assembler-Source-File.md#constants), [**macros**](Assembler-Source-File.md#macros), and [**functions**](Assembler-Source-File.md#functions). The assembly process is directed by a  [**target definition**](Target-Definition.md), which references a [**CPU definition**](CPU-Definition.md). 
