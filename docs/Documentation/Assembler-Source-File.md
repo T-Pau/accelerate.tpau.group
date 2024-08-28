@@ -50,9 +50,9 @@ Marks the object *name* as used.
 
 ### `.visibility`
 
-```
-.visibility [public|private]
-```
+<pre>
+<code>.visibility <em>{</em>public<em>|</em>private<em>}</em></code>
+</pre>
 
 The `.visibility` directive specifies the visibility of the following elements.
 
@@ -118,7 +118,7 @@ If the object is used, object *name* is also used.
 These contain code or other data and are saved in the resulting program binary:
 
 <pre>
-  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> [<a href="#object-modifiers"><em>object modifiers</em></a>] {
+  <code><em>[<a href="#element-modifiers">element modifiers</a>]</em> <em>name</em> <em>[<a href="#object-modifiers">object modifiers</a>]</em> {
     <em>body</em>
 }</code>
 </pre>
@@ -128,7 +128,7 @@ These contain code or other data and are saved in the resulting program binary:
 These only reserve a certain amount of memory, which will not be initialized and is usually not saved in the resulting program binary:
 
 <pre>
-  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> [<a href="#object-modifiers"><em>object modifiers</em></a>] .reserve <em>length</em></code>
+  <code><em>[<a href="#element-modifiers">element modifiers</a>]</em> <em>name</em> <em>[<a href="#object-modifiers">object modifiers</a>]</em> .reserve <em>length</em></code>
 </pre>
 
 
@@ -137,13 +137,13 @@ These only reserve a certain amount of memory, which will not be initialized and
 Constants define values that can be used in other parts of the program. They can refer to other constants or objects (which results in their address).
 
 <pre>
-  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> = <em>value</em></code>
+  <code><em>[<a href="#element-modifiers">element modifiers</a>]</em> <em>name</em> = <em>value</em></code>
 </pre>
 
 ### Macros
 
 <pre>
-  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] .macro <em>name</em> [<em>argument</em>[=<em>default-value</em>], ...] {
+  <code><em>[<a href="#element-modifiers">element modifiers</a>]</em> .macro <em>name</em> <em>[argument[</em>=<em>default-value]</em>, ...<em>]</em> {
     <em>body</em>
 }</code>
 </pre>
@@ -151,5 +151,5 @@ Constants define values that can be used in other parts of the program. They can
 ### Functions
 
 <pre>
-  <code>[<a href="#element-modifiers"><em>element modifiers</em></a>] <em>name</em> ([<em>argument</em>[=<em>default-value</em>], ...]) = <em>value</em></code>
+  <code><em>[<a href="#element-modifiers">element modifiers</a>]</em> <em>name</em> (<em>[argument[</em>=<em>default-value]</em>, ...<em>]</em>) = <em>value</em></code>
 </pre>

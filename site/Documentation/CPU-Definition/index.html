@@ -14,7 +14,7 @@
 <link href="../../assets/stylesheets/main.3cba04c6.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../assets/stylesheets/extra-style.irlg489e.min.css" rel="stylesheet"/></head>
+<link href="../../assets/stylesheets/extra-style.3yj6vqmj.min.css" rel="stylesheet"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -163,6 +163,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Structured-Values/">
+<span class="md-ellipsis">
+    Structured Values
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Target-Definition/">
 <span class="md-ellipsis">
     Target Definition
@@ -171,11 +178,146 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    CPU Definition
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     CPU Definition
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#directives">
+<span class="md-ellipsis">
+      Directives
+    </span>
+</a>
+<nav aria-label="Directives" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#addressing_mode">
+<span class="md-ellipsis">
+      .addressing_mode
+    </span>
+</a>
+<nav aria-label=".addressing_mode" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notation">
+<span class="md-ellipsis">
+      notation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arguments">
+<span class="md-ellipsis">
+      arguments
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encoding">
+<span class="md-ellipsis">
+      encoding
+    </span>
+</a>
+<nav aria-label="encoding" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opcode">
+<span class="md-ellipsis">
+      .opcode
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pc">
+<span class="md-ellipsis">
+      .pc
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#argument_type">
+<span class="md-ellipsis">
+      .argument_type
+    </span>
+</a>
+<nav aria-label=".argument_type" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enum">
+<span class="md-ellipsis">
+      .enum
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fits">
+<span class="md-ellipsis">
+      .fits
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#map">
+<span class="md-ellipsis">
+      .map
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range">
+<span class="md-ellipsis">
+      .range
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#byte_order">
+<span class="md-ellipsis">
+      .byte_order
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instruction">
+<span class="md-ellipsis">
+      .instruction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#syntax">
+<span class="md-ellipsis">
+      .syntax
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -231,6 +373,67 @@
 <article class="md-content__inner md-typeset">
 <h1 id="cpu-definition">CPU Definition</h1>
 <p>A <strong>CPU definition</strong> defines the syntax of the assembly instructions and how they are encoded.</p>
+<h2 id="directives">Directives</h2>
+<h3 id="addressing_mode"><code>.addressing_mode</code></h3>
+<pre>
+<code>.addressing_mode <em>name</em> {
+    <em>parameters</em>
+}</code>
+</pre>
+<h4 id="notation"><code>notation</code></h4>
+<p>This parameter is optional. If it is missing, the notation is just the mnemonic of the instruction.</p>
+<h4 id="arguments"><code>arguments</code></h4>
+<p>This parameter is optional. If it is missing, the addressing mode has no arguments.</p>
+<h4 id="encoding"><code>encoding</code></h4>
+<h5 id="opcode"><code>.opcode</code></h5>
+<h5 id="pc"><code>.pc</code></h5>
+<h3 id="argument_type"><code>.argument_type</code></h3>
+<h4 id="enum"><code>.enum</code></h4>
+<pre>
+<code>.argument_type <em>name</em> map {
+    <em>name</em>: <em>encoded-value</em>
+    <em>...</em>
+}</code>
+</pre>
+<p>The argument must be one of the specified <em>name</em> and is encoded as the corresponding <em>encoded-value</em>. All names must be keywords, all values must be integers.</p>
+<h4 id="fits"><code>.fits</code></h4>
+<pre>
+  <code>.argument_type <em>name</em> fits <em>integer_encoding</em></code>
+</pre>
+<p>The argument must fit in the specified integer encoding.</p>
+<p>For example:</p>
+<pre><code>.argument_type byte fits 1
+.argument_type signed_byte fits -1
+.argument_type word fits 2
+</code></pre>
+<h4 id="map"><code>.map</code></h4>
+<pre>
+<code>.argument_type <em>name</em> map {
+    <em>source-value</em>: <em>encoded-value</em>
+    <em>...</em>
+}</code>
+</pre>
+<p>The argument must be one of the specified <em>source-value</em> and is encoded as the corresponding <em>encoded-value</em>. All values must be integers.</p>
+<h4 id="range"><code>.range</code></h4>
+<p><strong>Warning: This argument type is currently broken. Don't use it.</strong></p>
+<h3 id="byte_order"><code>.byte_order</code></h3>
+<p>Specify the native byte order of the CPU.</p>
+<pre>
+  <code>.byte_order <em>byte_order</em></code>
+</pre>
+<p>Each digit in <em>byte_order</em> corresponds to one byte, with <code>1</code> representing the least significant and <code>8</code> the most significant byte. Bytes are encode in memory in the order they are listed. For example, little endian is <code>12345678</code>, big endian is <code>87654321</code>.</p>
+<h3 id="instruction"><code>.instruction</code></h3>
+<pre>
+<code>.instruction <em>mnemonic</em> {
+    <em>addressing-mode</em>: <em>opcode</em>
+    ...
+}</code>
+</pre>
+<h3 id="syntax"><code>.syntax</code></h3>
+<pre>
+  <code>.syntax <em>[</em>keywords<em>|</em>punctuation<em>]</em> "<em>symbol</em>" ...</code>
+</pre>
+<p>This specifies punctuation and keywords used the assembler syntax. Keywords that are valid identifiers (begin with a letter or underscore and contain only letters, underscore, and digits) need not be specified.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

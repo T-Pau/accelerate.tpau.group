@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://accelerate.tpau.group/Documentation/Structured-Values/</loc>
+         <lastmod>2024-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://accelerate.tpau.group/Documentation/Target-Definition/</loc>
          <lastmod>2024-08-28</lastmod>
          <changefreq>daily</changefreq>

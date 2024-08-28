@@ -28,6 +28,7 @@ nav:
     - Documentation/Introduction.md
     - Documentation/Assembler-Source-File.md
     - Documentation/Expressions.md
+    - Documentation/Structured-Values.md
     - Documentation/Target-Definition.md
     - Documentation/CPU-Definition.md
   - Examples:
