@@ -1,21 +1,14 @@
 ---
-<<<<<<< HEAD
 title: Accelerate
 ---
 ## What is Accelerate?
-=======
-title: Toolkit
----
-## What Is Toolkit?
->>>>>>> bd0a15b (Flesh out.)
 
-Toolkit is a collection of scripts, Python classes, assembler routines and build rules for developing programs for 8- and 16-bit computers. 
+Accelerate is a flexible cross-assembler running on modern systems targeting multiple 8- and 16-bit computers. Support for additional CPU types, memory models, and output formats can easily be added via configuration files.
 
-It is designed to be used with [Accelerate](accelerate.tpau.group) and [fast-ninja](fast-ninja.tpau.group).
+Programs are divided into small objects like a single subroutine or variable. These objects are automatically arranged in memory according to provided constraints like alignment or placement within a certain memory region. This allows to fulfill the hardware requirements of the target machine while automatically using the remaining memory optimally.
 
-## Why Use Toolkit?
+## Warning
 
-<<<<<<< HEAD
 **This program is still in the early stages of development. It contains bugs and features that aren't completely implemented yet. Also, details may still change in backwards incompatible ways.**
 
 ## Why Use Accelerate?
@@ -35,22 +28,5 @@ Then, assemble your program:
 ## Reporting Problems
 
 It's an old adage that it's never the compiler's fault, but since Accelerate is still young, bugs and misfeatures are likely. If you found a problem, please [create an issue on GitHub](https://github.com/T-Pau/Accelerate/issues/new/choose) or let us know at [accelerate@tpau.group](mailto:accelerate@tpau.group).
-=======
-Toolkit was primarily developed for use in our own programs.
-
-While the scripts creating assembly code, the provided assembler routines, and the build rules are specific to Accelerate and fast-ninja, some scripts and the underlying Python classes are more versatile.
-
-## Getting Started
-
-Include Toolkit as a submodule in your Git repository:
-
-```sh
-git submodule add https://github.com/T-Pau/Toolkit Toolkit
-```
-
-## Staying in Touch
-
-If you found a problem, please [create an issue on GitHub](https://github.com/T-Pau/Toolkit/issues/new/choose) or let us know at [toolkit@tpau.group](mailto:toolkit@tpau.group).
->>>>>>> bd0a15b (Flesh out.)
 
 Also let us know if the documentation is incomplete, inaccurate, or hard to understand.

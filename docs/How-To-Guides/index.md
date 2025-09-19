@@ -1,3 +1,3 @@
 # How-To Guides
 
-There are no guides available yet.
+There are no How-To Guides available yet.

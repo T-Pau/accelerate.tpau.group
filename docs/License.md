@@ -4,11 +4,11 @@ title: License
 sidebar_order: 4
 permalink: /license/
 ---
-Toolkit is released under a 2-clause BSD license:
+Accelerate is released under a 2-clause BSD license:
 
 Copyright (C) 2023-2025 Dieter Baron
 
-The authors can be contacted at <toolkit@tpau.group>
+The authors can be contacted at <accelerate@tpau.group>
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

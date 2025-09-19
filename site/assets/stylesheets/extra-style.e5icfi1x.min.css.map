@@ -1,10 +1,6 @@
 {
 	"version": 3,
-<<<<<<<< HEAD:site/assets/stylesheets/extra-style.e5icfi1x.min.css.map
 	"file": "extra-style.e5icfi1x.min.css",
-========
-	"file": "extra-style.kx33344p.min.css",
->>>>>>>> bd0a15b (Flesh out.):site/assets/stylesheets/extra-style.kx33344p.min.css.map
 	"sources": [
 		"extra_sass/style.css.scss",
 		"extra_sass/source.scss"
