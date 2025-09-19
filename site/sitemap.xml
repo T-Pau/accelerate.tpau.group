@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+<<<<<<< HEAD
          <loc>https://accelerate.tpau.group/</loc>
          <lastmod>2025-09-19</lastmod>
     </url>
@@ -58,6 +59,73 @@
     </url>
     <url>
          <loc>https://accelerate.tpau.group/Tutorials/Hello-World-C64/</loc>
+=======
+         <loc>https://toolkit.tpau.group/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/License/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Explanations/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/How-To-Guides/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/convert-bitmap/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/convert-characters/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/convert-charset/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/convert-image/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/convert-markdown/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/convert-screens/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/convert-sprites/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/create-disk/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/create-zip/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/encode-colors/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Reference/parallel-struct/</loc>
+         <lastmod>2025-09-19</lastmod>
+    </url>
+    <url>
+         <loc>https://toolkit.tpau.group/Tutorials/</loc>
+>>>>>>> bd0a15b (Flesh out.)
          <lastmod>2025-09-19</lastmod>
     </url>
 </urlset>
