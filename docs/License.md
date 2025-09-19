@@ -6,7 +6,7 @@ permalink: /license/
 ---
 Accelerate is released under a 2-clause BSD license:
 
-Copyright (C) 2023-2024 Dieter Baron
+Copyright (C) 2023-2025 Dieter Baron
 
 The authors can be contacted at <accelerate@tpau.group>
 
